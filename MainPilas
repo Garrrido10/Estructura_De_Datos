@@ -1,0 +1,21 @@
+public class MainPilas {
+    public static void main(String[] args) {
+        System.out.println("=== PRUEBA DE PILA ESTÁTICA ===");
+        PilaSimple pilaEstatica = new PilaSimple(3);
+        pilaEstatica.apilar(10);
+        pilaEstatica.apilar(20);
+        pilaEstatica.mostrar();
+        System.out.println("Elemento en el tope: " + pilaEstatica.consultarTope());
+        pilaEstatica.desapilar();
+        pilaEstatica.mostrar();
+
+        System.out.println("\n=== PRUEBA DE PILA DINÁMICA ===");
+        PilaDinamica pilaDinamica = new PilaDinamica();
+        pilaDinamica.apilar(100);
+        pilaDinamica.apilar(200);
+        pilaDinamica.mostrar();
+        System.out.println("Elemento en la cima: " + pilaDinamica.consultarCima());
+        pilaDinamica.desapilar();
+        pilaDinamica.mostrar();
+    }
+}
