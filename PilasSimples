@@ -1,0 +1,60 @@
+public class PilaSimple {
+    private int[] datos;
+    private int tope;
+
+    public PilaSimple(int capacidad) {
+        datos = new int[capacidad];
+        tope = -1;
+    }
+
+    public boolean estaVacia() {
+        return tope == -1;
+    }
+
+    public boolean estaLlena() {
+        return tope == datos.length - 1;
+    }
+
+    public void apilar(int x) {
+        if (estaLlena()) {
+            System.out.println("Error: Desbordamiento (Stack Overflow). La pila está llena.");
+        } else {
+            tope++;
+            datos[tope] = x;
+            System.out.println("Elemento " + x + " insertado en la pila estática.");
+        }
+    }
+
+    public int desapilar() {
+        if (estaVacia()) {
+            System.out.println("Error: Subdesbordamiento (Stack Underflow). La pila está vacía.");
+            return -1;
+        } else {
+            int eliminado = datos[tope];
+            tope--;
+            System.out.println("Elemento " + eliminado + " extraído de la pila estática.");
+            return eliminado;
+        }
+    }
+
+    public int consultarTope() {
+        if (estaVacia()) {
+            System.out.println("La pila está vacía. No hay elemento en el tope.");
+            return -1;
+        } else {
+            return datos[tope];
+        }
+    }
+
+    public void mostrar() {
+        if (estaVacia()) {
+            System.out.println("La pila estática está vacía.");
+        } else {
+            System.out.print("Pila Estática (Tope -> Base): ");
+            for (int i = tope; i >= 0; i--) {
+                System.out.print(datos[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
