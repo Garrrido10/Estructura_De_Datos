@@ -12,11 +12,13 @@
 1. Abrir el proyecto en **IntelliJ IDEA**.
 2. Asegurarse de que todos los archivos (`PilaSimple.java`, `Nodo.java`, `PilaDinamica.java` y `Main.java`) estén dentro del directorio `src`.
 3. Hacer clic derecho sobre la clase `Main.java` y seleccionar **Run 'Main.main()'** o compilar mediante la terminal con:
-   ```bash
-   javac *.java
-   java Main
 
-   === PRUEBA DE PILA ESTÁTICA ===
+```bash
+javac *.java
+java Main
+```
+```text
+=== PRUEBA DE PILA ESTÁTICA ===
 Elemento 10 insertado en la pila estática.
 Elemento 20 insertado en la pila estática.
 Pila Estática (Tope -> Base): 20 10 
