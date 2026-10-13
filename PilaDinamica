@@ -1,0 +1,53 @@
+public class PilaDinamica {
+    private Nodo cima;
+
+    public PilaDinamica() {
+        this.cima = null;
+    }
+
+    public boolean estaVacia() {
+        return cima == null;
+    }
+
+    public void apilar(int x) {
+        Nodo nuevoNodo = new Nodo(x);
+        nuevoNodo.siguiente = cima;
+        cima = nuevoNodo;
+        System.out.println("Elemento " + x + " insertado en la pila dinámica.");
+    }
+
+    public int desapilar() {
+        if (estaVacia()) {
+            System.out.println("Error: Subdesbordamiento. La pila dinámica está vacía.");
+            return -1;
+        } else {
+            int eliminado = cima.dato;
+            cima = cima.siguiente;
+            System.out.println("Elemento " + eliminado + " extraído de la pila dinámica.");
+            return eliminado;
+        }
+    }
+
+    public int consultarCima() {
+        if (estaVacia()) {
+            System.out.println("La pila dinámica está vacía.");
+            return -1;
+        } else {
+            return cima.dato;
+        }
+    }
+
+    public void mostrar() {
+        if (estaVacia()) {
+            System.out.println("La pila dinámica está vacía.");
+        } else {
+            Nodo actual = cima;
+            System.out.print("Pila Dinámica (Cima -> Base): ");
+            while (actual != null) {
+                System.out.print(actual.dato + " ");
+                actual = actual.siguiente;
+            }
+            System.out.println();
+        }
+    }
+}
